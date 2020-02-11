@@ -1,0 +1,18 @@
+spring:
+  application:
+      name: SpringCluster
+      
+server:
+  port: ${PORT:8761}
+  
+eureka:
+  instance:
+    hostname: ${spring.cloud.client.hostname}
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    healthcheck:
+        enabled: true
+  server:
+    enableSelfPreservation: true
